@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import numpy as np
 import cv2
 import glob
@@ -77,7 +77,7 @@ runCalibration()
 
 
 
-=======
+
 import numpy as np
 import cv2
 import glob
@@ -128,13 +128,14 @@ def calibrate(Showpics=True):
 
 
 def removedistortion(camMatrix,distCoeff):
-  root = os.getcwd()
-  imgPath  = os.path.join(root,"images/distortions")
+  imgPath  = ("cali_imgs\processed-0BF013EB-4837-4FBE-BDFF-769070C1F7D9.jpeg")
   img = cv2.imread(imgPath)
 
   height,width = img.shape[:2]
   camMatrixNew, roi = cv2.getOptimalNewCameraMatrix(camMatrix,distCoeff,(width,height),1,(width,height))
   imgUndist = cv2.undistort(img,camMatrix,distCoeff,None,camMatrixNew)
+
+  print("New Camera Matix\n",camMatrixNew)
 
   #draw a line to see the distortion change
   cv2.line(img,(1769,103),(1780,922),(255,255,255),2)
@@ -152,8 +153,11 @@ def removedistortion(camMatrix,distCoeff):
 def runCalibration():
   calibrate(Showpics=True)
 
-runCalibration()
+def runRemoveDistortion():
+  camMatrix, distCoeff = calibrate(Showpics=False)
+  removedistortion(camMatrix,distCoeff)
 
 
 
->>>>>>> 4efdfd7 (updated)
+runRemoveDistortion()
+
