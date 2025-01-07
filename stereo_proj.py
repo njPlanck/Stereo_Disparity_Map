@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
@@ -100,6 +101,8 @@ def cal_disparity(left_img, right_img):
 
   
 =======
+=======
+>>>>>>> 4efdfd727cc47ba7033ff5d85262cf6e7b395142
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
@@ -171,4 +174,7 @@ plt.show()
 
 
 
+<<<<<<< HEAD
 >>>>>>> 4efdfd7 (updated)
+=======
+>>>>>>> 4efdfd727cc47ba7033ff5d85262cf6e7b395142
